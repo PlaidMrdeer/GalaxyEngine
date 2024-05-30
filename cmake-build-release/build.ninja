@@ -56,6 +56,20 @@ build CMakeFiles/GalaxyEngine.dir/src/Engine.cpp.o: CXX_COMPILER__GalaxyEngine_u
   OBJECT_DIR = CMakeFiles/GalaxyEngine.dir
   OBJECT_FILE_DIR = CMakeFiles/GalaxyEngine.dir/src
 
+build CMakeFiles/GalaxyEngine.dir/src/Shader.cpp.o: CXX_COMPILER__GalaxyEngine_unscanned_Release /home/plaidmrdeer/dev/GalaxyEngine/src/Shader.cpp || cmake_object_order_depends_target_GalaxyEngine
+  DEP_FILE = CMakeFiles/GalaxyEngine.dir/src/Shader.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -I/home/plaidmrdeer/dev/GalaxyEngine/deps/glfw/include -I/home/plaidmrdeer/dev/GalaxyEngine/deps/glm/include -I/home/plaidmrdeer/dev/GalaxyEngine/deps/glad/include -I/home/plaidmrdeer/dev/GalaxyEngine/deps/glm
+  OBJECT_DIR = CMakeFiles/GalaxyEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles/GalaxyEngine.dir/src
+
+build CMakeFiles/GalaxyEngine.dir/src/Vertex.cpp.o: CXX_COMPILER__GalaxyEngine_unscanned_Release /home/plaidmrdeer/dev/GalaxyEngine/src/Vertex.cpp || cmake_object_order_depends_target_GalaxyEngine
+  DEP_FILE = CMakeFiles/GalaxyEngine.dir/src/Vertex.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -I/home/plaidmrdeer/dev/GalaxyEngine/deps/glfw/include -I/home/plaidmrdeer/dev/GalaxyEngine/deps/glm/include -I/home/plaidmrdeer/dev/GalaxyEngine/deps/glad/include -I/home/plaidmrdeer/dev/GalaxyEngine/deps/glm
+  OBJECT_DIR = CMakeFiles/GalaxyEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles/GalaxyEngine.dir/src
+
 build CMakeFiles/GalaxyEngine.dir/src/main.cpp.o: CXX_COMPILER__GalaxyEngine_unscanned_Release /home/plaidmrdeer/dev/GalaxyEngine/src/main.cpp || cmake_object_order_depends_target_GalaxyEngine
   DEP_FILE = CMakeFiles/GalaxyEngine.dir/src/main.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
@@ -71,7 +85,7 @@ build CMakeFiles/GalaxyEngine.dir/src/main.cpp.o: CXX_COMPILER__GalaxyEngine_uns
 #############################################
 # Link the executable /home/plaidmrdeer/dev/GalaxyEngine/build/bin/GalaxyEngine
 
-build /home/plaidmrdeer/dev/GalaxyEngine/build/bin/GalaxyEngine: CXX_EXECUTABLE_LINKER__GalaxyEngine_Release CMakeFiles/GalaxyEngine.dir/src/Engine.cpp.o CMakeFiles/GalaxyEngine.dir/src/main.cpp.o | deps/glfw/src/libglfw3.a deps/glm/glm/libglm.a deps/glad/libglad.so /usr/lib/librt.a /usr/lib/libm.so || deps/glad/libglad.so deps/glfw/src/libglfw3.a deps/glm/glm/libglm.a
+build /home/plaidmrdeer/dev/GalaxyEngine/build/bin/GalaxyEngine: CXX_EXECUTABLE_LINKER__GalaxyEngine_Release CMakeFiles/GalaxyEngine.dir/src/Engine.cpp.o CMakeFiles/GalaxyEngine.dir/src/Shader.cpp.o CMakeFiles/GalaxyEngine.dir/src/Vertex.cpp.o CMakeFiles/GalaxyEngine.dir/src/main.cpp.o | deps/glfw/src/libglfw3.a deps/glm/glm/libglm.a deps/glad/libglad.so /usr/lib/librt.a /usr/lib/libm.so || deps/glad/libglad.so deps/glfw/src/libglfw3.a deps/glm/glm/libglm.a
   FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = -Wl,-rpath,/home/plaidmrdeer/dev/GalaxyEngine/cmake-build-release/deps/glad  deps/glfw/src/libglfw3.a  deps/glm/glm/libglm.a  deps/glad/libglad.so  /usr/lib/librt.a  -lm  -ldl
   OBJECT_DIR = CMakeFiles/GalaxyEngine.dir
