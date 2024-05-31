@@ -1,16 +1,12 @@
-
-#ifndef GALAXYENGINE_ENGINE_H
-#define GALAXYENGINE_ENGINE_H
-
 class Engine
 {
 public:
-    void run();
+    static void run();
 private:
     static void initGLFW();
     static void createWindow();
+    static void handleShader();
+    static void handleVertex();
     static void mainLoop();
     static void cleanup();
 };
-
-#endif

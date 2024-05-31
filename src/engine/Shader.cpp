@@ -1,10 +1,7 @@
 #include "Shader.h"
+
 #include <glad/glad.h>
 #include <iostream>
-
-unsigned int vertexShader;
-unsigned int fragmentShader;
-unsigned int shaderProgram;
 
 int success;
 char infoLog[512];
@@ -16,14 +13,6 @@ Shader::Shader(const char *vertexShaderSource, const char *fragmentShaderSource)
 }
 
 
-void Shader::handleShader()
-{
-    compileVertexShader();
-    compileFragmentShader();
-    linkShader();
-
-}
-
 void Shader::compileVertexShader()
 {
     vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -34,7 +23,7 @@ void Shader::compileVertexShader()
     if (!success)
     {
         glGetShaderInfoLog(vertexShader, 512, nullptr, infoLog);
-        std::cerr << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
+        std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
 }
 
@@ -48,11 +37,11 @@ void Shader::compileFragmentShader()
     if (!success)
     {
         glGetShaderInfoLog(fragmentShader, 512, nullptr, infoLog);
-        std::cerr << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
+        std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
 }
 
-void Shader::linkShader()
+unsigned int Shader::linkShader()
 {
     shaderProgram = glCreateProgram();
     glAttachShader(shaderProgram, vertexShader);
@@ -62,13 +51,10 @@ void Shader::linkShader()
     glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
     if (!success) {
         glGetProgramInfoLog(shaderProgram, 512, nullptr, infoLog);
-        std::cerr << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+        std::cout << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
     }
-
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
-}
 
-unsigned int Shader::getShader() {
     return shaderProgram;
 }

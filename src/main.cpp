@@ -1,12 +1,7 @@
-
-#include <iostream>
-#include "Engine.h"
+#include "engine/Engine.h"
 
 int main()
 {
-    std::cerr << "asd";
-
-    Engine engine{};
-    engine.run();
+    Engine::run();
     return 0;
 }
