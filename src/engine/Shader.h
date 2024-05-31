@@ -1,8 +1,9 @@
+#include <string>
 
 class Shader
 {
 public:
-    Shader(const char *vertexShaderSource, const char *fragmentShaderSource);
+    Shader(const std::string& vertexShaderSource, const std::string& fragmentShaderSource);
 
     void compileVertexShader();
     void compileFragmentShader();
@@ -12,6 +13,6 @@ private:
     unsigned int fragmentShader{};
     unsigned int shaderProgram{};
 
-    const char *vertexShaderSource{};
-    const char *fragmentShaderSource{};
+    const char *vertexCode{};
+    const char *fragmentCode{};
 };

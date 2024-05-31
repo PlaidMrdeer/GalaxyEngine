@@ -1,10 +1,9 @@
-//class Vertex
-//{
-//public:
-//    explicit Vertex(float *vertices);
-//
-//    void handleVertex();
-//private:
-//    float *vertices;
-//    unsigned int VBO{}, VAO{};;
-//};
+class Vertex
+{
+public:
+    explicit Vertex(float *vertices);
+
+    float *getVertex();
+private:
+    float *vertices;
+};
