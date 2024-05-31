@@ -13,6 +13,6 @@ private:
     unsigned int fragmentShader{};
     unsigned int shaderProgram{};
 
-    const char *vertexCode{};
-    const char *fragmentCode{};
+    std::string s_vertexCode{};
+    std::string s_fragmentCode{};
 };

@@ -8,25 +8,24 @@
 int success;
 char infoLog[512];
 
+const char *vertexCode;
+const char *fragmentCode;
+
 Shader::Shader(const std::string& vertexPath, const std::string& fragmentPath)
 {
-    std::ifstream vShaderFile;
-    std::ifstream fShaderFile;
+    std::ifstream vShaderFile(vertexPath);
+    std::ifstream fShaderFile(fragmentPath);
 
-    vShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
-    fShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
-
-    vShaderFile.open(vertexPath);
-    fShaderFile.open(fragmentPath);
     std::stringstream vShaderStream, fShaderStream;
 
     vShaderStream << vShaderFile.rdbuf();
     fShaderStream << fShaderFile.rdbuf();
 
-    vertexCode = vShaderStream.str().c_str();
-    fragmentCode = fShaderStream.str().c_str();
+    s_vertexCode = vShaderStream.str();
+    s_fragmentCode = fShaderStream.str();
 
-    std::cerr << vertexCode;
+    vertexCode = s_vertexCode.c_str();
+    fragmentCode = s_fragmentCode.c_str();
 
     vShaderFile.close();
     fShaderFile.close();
