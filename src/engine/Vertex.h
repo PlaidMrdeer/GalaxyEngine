@@ -3,7 +3,11 @@ class Vertex
 public:
     explicit Vertex(float *vertices);
 
-    float *getVertex();
+    void handleVertex();
+
+    unsigned int *getVBO();
+    unsigned int *getVAO();
 private:
     float *vertices;
+    unsigned int VBO{}, VAO{};
 };
